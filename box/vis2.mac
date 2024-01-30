@@ -1,0 +1,7 @@
+# Use this open statement to create an OpenGL view:
+/vis/open OGL 600x600-0+0
+# Draw geometry:
+/vis/drawVolume
+
+/vis/scene/add/scale   # Simple scale line
+/vis/scene/add/axes    # Simple axes: x=red, y=green, z=blue.

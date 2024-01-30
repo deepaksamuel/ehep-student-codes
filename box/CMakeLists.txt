@@ -16,14 +16,6 @@ else()
 endif()
 
 #----------------------------------------------------------------------------
-# Setup ROOT include directories and compile definitions
-# Setup include directory for this project
-#
-find_package(ROOT REQUIRED COMPONENTS RIO)
-include_directories(${ROOT_INCLUDE_DIRS})
-# include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
-
-#----------------------------------------------------------------------------
 # Setup Geant4 include directories and compile definitions
 # Setup include directory for this project
 #
@@ -40,8 +32,8 @@ file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 #----------------------------------------------------------------------------
 # Add the executable, and link it to the Geant4 libraries
 #
-add_executable(serc19 serc19_cmsmodel.cc ${sources} ${headers})
-target_link_libraries(serc19 ${Geant4_LIBRARIES} ${ROOT_LIBRARIES})
+add_executable(exampleB1 exampleB1.cc ${sources} ${headers})
+target_link_libraries(exampleB1 ${Geant4_LIBRARIES})
 
 #----------------------------------------------------------------------------
 # Copy all scripts to the build directory, i.e. the directory in which we
@@ -49,15 +41,13 @@ target_link_libraries(serc19 ${Geant4_LIBRARIES} ${ROOT_LIBRARIES})
 # relies on these scripts being in the current working directory.
 #
 set(EXAMPLEB1_SCRIPTS
-  gui.mac
-  icons.mac
+  exampleB1.in
+  exampleB1.out
   init_vis.mac
-  run_gamma.mac
-  run_muon.mac
-  run_pi0.mac
-  run_pion.mac
-  run.mac
+  run1.mac
+  run2.mac
   vis.mac
+  vis2.mac
   )
 
 foreach(_script ${EXAMPLEB1_SCRIPTS})
@@ -72,9 +62,9 @@ endforeach()
 # For internal Geant4 use - but has no effect if you build this
 # example standalone
 #
-add_custom_target(B1 DEPENDS serc19)
+add_custom_target(B1 DEPENDS exampleB1)
 
 #----------------------------------------------------------------------------
 # Install the executable to 'bin' directory under CMAKE_INSTALL_PREFIX
 #
-install(TARGETS serc19 DESTINATION bin)
+install(TARGETS exampleB1 DESTINATION bin)
