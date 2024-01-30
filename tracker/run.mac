@@ -1,0 +1,32 @@
+#Enter the particle id of the input particle
+/Serc19/gun/pid  13
+#Energy energy in GeV
+/Serc19/gun/energy 45.0
+#To Smear the energy. give sigma in GeV
+/Serc19/gun/ensmear -30.0
+/Serc19/gun/incdir 1.0 0 0
+#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#Give smearing for theta in cos(theta) terms.
+/Serc19/gun/thsmear -300.
+#Give smearing phi in milliradian. 
+/Serc19/gun/phsmear -100.
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Serc19/gun/rndm  off
+/Serc19/gun/rndmPID  off
+
+/Serc19/gun/incpos  0.	0.	0.
+/Serc19/gun/vxsmear 0.01
+/Serc19/gun/vysmear 0.01
+/Serc19/gun/vzsmear 5.0
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#Number of particle to be shot simultaneously in an event is given here. 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Serc19/gun/mult 1
+#/gun/number 1
+/Serc19/run/output_file	test
+/Serc19/run/output_file2	test_geant.root
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#Give the number of event you want to run.
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/run/beamOn 111
