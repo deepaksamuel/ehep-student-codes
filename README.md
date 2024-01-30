@@ -2,6 +2,6 @@
 
 To preview the slides as html:
 
-https://htmlpreview.github.io/?https%3A%2F%2Fgithub.com%2Fdeepaksamuel%2Fehep-student-codes%2Fblob%2Fmain%2Fslides%2Fclasses.html=
+http://htmlpreview.github.io/?https://github.com/deepaksamuel/ehep-student-codes/blob/main/slides/classes.html
 
-https://htmlpreview.github.io/?https%3A%2F%2Fgithub.com%2Fdeepaksamuel%2Fehep-student-codes%2Fblob%2Fmain%2Fslides%2Fdetector.html=
+http://htmlpreview.github.io/?https://github.com/deepaksamuel/ehep-student-codes/blob/main/slides/detector.html
