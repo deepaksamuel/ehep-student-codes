@@ -40,6 +40,7 @@
 #include "G4PVPlacement.hh"
 #include "G4SystemOfUnits.hh"
 
+
 namespace B1
 {
 
@@ -61,7 +62,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   G4NistManager* nist = G4NistManager::Instance();
   
   G4Material* world_mat = nist->FindOrBuildMaterial("G4_AIR"); // the world volume is Air
-  G4Material* box_mat = nist->FindOrBuildMaterial("G4_WATER");
+  G4Material* box_mat = nist->FindOrBuildMaterial("G4_WATER"); // box material is water
 
   // Option to switch on/off checking of volumes overlaps
   //
@@ -69,8 +70,9 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 
 
   // construct a world volume box of dimensions 30 cm x 30 cm x 30 cm
-  G4Box* solidWorld =  new G4Box("World", 15*cm, 15*cm, 15*cm);     //Note convention: Half length is used
-  G4LogicalVolume* logicWorld =   new G4LogicalVolume(solidWorld, world_mat,"World");            //its name
+  G4Box* solidWorld =  new G4Box("World", 15*cm, 15*cm, 15*cm);     //Solid volume, Note convention: Half length is used
+  G4LogicalVolume* logicWorld =   new G4LogicalVolume(solidWorld, world_mat,"World"); // logic volume
+  // physical volume
   G4VPhysicalVolume* physWorld =
     new G4PVPlacement(0,                     //no rotation
                       G4ThreeVector(),       //at (0,0,0)
@@ -85,6 +87,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   // Big box: construct a water box of dimensions 20 cm x 20 cm x 20 cm
   G4Box* solidBox =  new G4Box("Box", 10*cm, 10*cm, 10*cm);     //Note convention: Half length is used
   G4LogicalVolume* logicBox =   new G4LogicalVolume(solidBox, box_mat,"Box");            //its name
+  
   G4RotationMatrix* rotation = new G4RotationMatrix();
   rotation->rotateX(0*deg);
   rotation->rotateY(0*deg);
@@ -99,22 +102,6 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
                       false,                 //no boolean operation
                       0,                     //copy number
                       checkOverlaps);        //overlaps checking
-
-
-
-  // Second smaller box
-  // G4Box* solidBox2 =  new G4Box("Box", 2*cm, 2*cm, 2*cm);     //Note convention: Half length is used
-  // G4LogicalVolume* logicBox2 =   new G4LogicalVolume(solidBox2, box_mat,"Box");            //its name
-  
-  // G4VPhysicalVolume* physBox2 =
-  //                     new G4PVPlacement(0,     // no rotation 
-  //                     G4ThreeVector(0,0,0),      //at // translation
-  //                     logicBox2,             //its logical volume
-  //                     "Box",                 //its name
-  //                     logicWorld,            //its mother  volume
-  //                     false,                 //no boolean operation
-  //                     0,                     //copy number
-  //                     checkOverlaps);        //overlaps checking
 
 
 

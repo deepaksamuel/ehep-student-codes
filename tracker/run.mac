@@ -11,7 +11,7 @@
 #Give smearing phi in milliradian. 
 /Serc19/gun/phsmear -100.
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Serc19/gun/rndm  off
+/Serc19/gun/rndm  on
 /Serc19/gun/rndmPID  off
 
 /Serc19/gun/incpos  0.	0.	0.
@@ -29,4 +29,4 @@
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #Give the number of event you want to run.
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/run/beamOn 111
+/run/beamOn 10
