@@ -19,6 +19,12 @@ EHEP Software School 2024
 https://github.com/deepaksamuel/ehep-student-codes.git
 
 ---
+# Geant4 on Github:
+
+> https://github.com/Geant4/geant4/blob/master/examples/basic/B1/include/DetectorConstruction.hh
+
+> https://github.com/Geant4/geant4/blob/master/source/run/include/G4VUserDetectorConstruction.hh
+---
 # C++ code structure
 
 

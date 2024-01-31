@@ -37,6 +37,34 @@ Classes with `G4V` prefixes are **abstract** classes:
 
 ---
 
+# Geant4: Calling the mandatory classes in main:
+
+```c
+int main(int argc,char** argv)
+{
+  // Detect interactive mode (if no arguments) and define UI session
+  //
+  G4UIExecutive* ui = nullptr;
+  if ( argc == 1 ) { ui = new G4UIExecutive(argc, argv); }
+
+  G4int precision = 4;
+  G4SteppingVerbose::UseBestUnit(precision);
+
+  auto* runManager =
+    G4RunManagerFactory::CreateRunManager(G4RunManagerType::Default); // run manager
+ 
+  // Set mandatory initialization classes
+  runManager->SetUserInitialization(new DetectorConstruction()); // detector
+  // Physics list
+  G4VModularPhysicsList* physicsList = new QBBC;
+  runManager->SetUserInitialization(physicsList); // physics list
+
+// Gun, Event, Run, Stepping actions etc
+  runManager->SetUserInitialization(new ActionInitialization()); 
+  // Initialize visualization
+```
+---
+
 # Detector construction: First goals
 
 - Detector construction: `G4VUserDetectorConstruction`
