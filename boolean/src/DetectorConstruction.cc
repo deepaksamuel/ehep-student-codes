@@ -92,25 +92,6 @@ namespace B1
     G4LogicalVolume* logicBox =   new G4LogicalVolume(subtraction, box_mat,"Box-Cylinder");            //its name
 
     
-    
-    
-    //*********************************************************************
-    // Task 1: create two holes in the box, each orthogonal to each other
-    // uncomment the following for demonstrating rotations and translations
-    // AND comment out the previous subtractionSolid!
-    //*********************************************************************
-   
-    // G4Tubs *cyl1 = new G4Tubs("Cylinder", 0 * mm, 15 * mm, 42 * mm, 0, 2 * CLHEP::pi); // rmin=0;rmax=15 mm; len=40mm and phi from 0 to 2pi
-    // G4SubtractionSolid *subtraction1 = new G4SubtractionSolid("Box-Cylinder1", box, cyl1);  // subtract the unrotated cylinder
-    // G4RotationMatrix *yRot = new G4RotationMatrix; // Rotates X and Z axes only
-    // yRot->rotateY(CLHEP::pi / 2);                  // Rotates 45 degrees
-    // G4SubtractionSolid *subtraction2 = new G4SubtractionSolid("Box-Cylinder2", subtraction1, cyl1, yRot, G4ThreeVector()); // subtract the second rotated cylinder
-    // G4LogicalVolume *logicBox = new G4LogicalVolume(subtraction2, box_mat, "Box-Cylinder"); // use the second subtraction to create the logical volume
-
-    //********************************************************************* 
-
-
-
     G4VPhysicalVolume *physBox =
         new G4PVPlacement(0,                      // rotation matrix
                           G4ThreeVector(0, 0, 0), // at // translation
